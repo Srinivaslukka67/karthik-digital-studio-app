@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-gold-light: #f3e5ab;
+  --color-gold: #d4af37;
+  --color-gold-dark: #996515;
+  --color-charcoal: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans antialiased selection:bg-gold/30;
+  }
+}
+
+.gold-text {
+  @apply bg-linear-to-b from-gold-light via-gold to-gold-dark bg-clip-text text-transparent;
+}
+
+.gold-button {
+  @apply bg-linear-to-r from-gold-dark via-gold to-gold-light text-black font-bold uppercase tracking-widest;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] shadow-2xl;
+}
+
+.input-field {
+  @apply w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-hidden transition-all focus:ring-2 focus:ring-gold/50 focus:border-gold/50 placeholder:text-white/20;
+}
+
+.cinematic-bg {
+  @apply absolute inset-0 z-0 bg-cover bg-center;
+}
+
+.cinematic-overlay {
+  @apply absolute inset-0 bg-linear-to-b from-black/40 via-black/60 to-black;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.gold-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.nav-blur {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
+}
